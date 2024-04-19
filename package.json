@@ -1,0 +1,20 @@
+{
+  "name": "halikovnode",
+  "version": "1.0.0",
+  "description": "test rest api",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./server/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "eslint": "^9.0.0",
+    "express": "^4.19.2",
+    "knex": "^3.1.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.0",
+    "prettier": "^3.2.5"
+  }
+}
