@@ -41,7 +41,7 @@ class UserController {
           .select()
           .where({ id: id[0] })
           .then((user) => {
-            return res.json(user[0]);
+            return res.status(201).json(user[0]);
           })
       })
       .catch((err) => {
