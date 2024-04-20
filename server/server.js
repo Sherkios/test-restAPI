@@ -3,7 +3,6 @@ const morgan = require('morgan');
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
-
 // устанавливаем порт сервера
 const PORT = 5000;
 const app = express();
@@ -11,7 +10,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 try {
-  
+
 
   app.use('/api/users', require('./routes/User'));
 

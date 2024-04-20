@@ -4,17 +4,24 @@
   "description": "test rest api",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./server/server.js"
+    "start": "nodemon ./server/server.js",
+    "migrate": "knex migrate:latest --knexfile server/db/knexfile.js",
+    "seed": "knex seed:run --knexfile server/db/knexfile.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
-    "eslint": "^9.0.0",
     "express": "^4.19.2",
     "knex": "^3.1.0",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.0",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0"
   }
 }
