@@ -20,7 +20,10 @@ module.exports = async function (req, res, next) {
     }
     next()
 
-  } catch (error) {
-    return res.status(404).json({ message: "Что-то пошло не так, попробуйте позже" })
+  } catch (e) {
+    return res.status(404).json({
+      message: "Что-то пошло не так, попробуйте позже",
+      error: e
+    })
   }
 }

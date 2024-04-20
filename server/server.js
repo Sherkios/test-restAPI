@@ -1,6 +1,5 @@
 
 const morgan = require('morgan');
-const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 // устанавливаем порт сервера
@@ -10,8 +9,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(morgan('dev'));
 try {
-
-
   app.use('/api/users', require('./routes/User'));
 
   app.listen(PORT, () => {

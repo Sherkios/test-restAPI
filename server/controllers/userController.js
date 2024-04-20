@@ -63,7 +63,7 @@ class UserController {
         .then((user) => {
           return res.json(user[0]);
         })
-        .catch((err) => {
+        .catch(() => {
           res.status(404).json({
             message: "Что-то пошло не так, попробуйте позже"
           })
@@ -74,7 +74,7 @@ class UserController {
         .then((users) => {
           return res.json(users);
         })
-        .catch((err) => {
+        .catch(() => {
           return res.json({
             message: "Что-то пошло не так, попробуйте позже"
           });
@@ -110,7 +110,7 @@ class UserController {
             return res.json(data);
           })
       })
-      .catch((err) => {
+      .catch(() => {
         res.status(404).json({ message: "Что-то пошло не так, попробуйте позже" })
       })
   }
@@ -119,10 +119,10 @@ class UserController {
     knex('users')
       .where({ id: req.params.id })
       .del()
-      .then((data) => {
+      .then(() => {
         return res.json({ message: "Пользователь был удален" });
       })
-      .catch((err) => {
+      .catch(() => {
         return res.status(404).json({ message: "Что-то пошло не так, попробуйте позже" })
       });
   }
