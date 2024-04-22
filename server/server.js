@@ -1,4 +1,3 @@
-
 const morgan = require('morgan');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -13,7 +12,7 @@ try {
 
   app.listen(PORT, () => {
     console.log(`Сервер начал работать по http://localhost:${PORT}`);
-  })
+  });
 } catch (error) {
   console.warn(error);
 }

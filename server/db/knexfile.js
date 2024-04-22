@@ -1,17 +1,18 @@
-const { log } = require('console');
 const path = require('path');
-// Update with your config settings.
-module.exports = {
-
+const knex = require('knex');
+const config = {
   development: {
     client: 'sqlite3',
     connection: {
-      filename: path.join(__dirname, 'db.sqlite3')
+      filename: path.join(__dirname, 'db.sqlite3'),
     },
     migrations: {
-      tableName: 'knex_migrations'
+      tableName: 'knex_migrations',
     },
-    useNullAsDefault: true
-  }
-
+    useNullAsDefault: true,
+  },
 };
+
+const db = knex(config.development);
+
+module.exports = db;
